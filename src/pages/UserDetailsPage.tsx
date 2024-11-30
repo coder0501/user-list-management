@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { useAppSelector } from "../redux/store";
+import { Link } from "react-router-dom";
 
 const UserDetailsPage: React.FC = () => {
   const { id } = useParams();
@@ -13,7 +14,15 @@ const UserDetailsPage: React.FC = () => {
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
       <div className="p-6 bg-white rounded-lg shadow-md w-full max-w-lg">
-        <h1 className="text-2xl font-bold text-blue-600 mb-4">{user.name}</h1>
+        <Link to="/" className="max-w-lg w-half ">
+          <div className="flex gap-1 items-center mb-4">
+            <svg width="12" height="20" viewBox="0 0 12 20" fill="black" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10.25 1.5L1.75 10L10.25 18.5" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            Back
+          </div>
+        </Link>
+        <h1 className="text-2xl font-bold text-blue-600 mb-4"> {user.name}</h1>
         <div className="space-y-2">
           <p className="text-gray-600">
             <span className="font-medium">Email:</span> {user.email}

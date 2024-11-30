@@ -23,7 +23,7 @@ const UserListPage: React.FC = () => {
     return (
         <div>
 
-            <div className="flex items-end flex-wrap ">
+            <div className="flex items-end flex-wrap">
                 <AddUserForm />
                 {status === "loading" && <p>Loading users...</p>}
                 {status === "failed" && <p className="text-red-500">{error}</p>}
